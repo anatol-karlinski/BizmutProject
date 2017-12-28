@@ -1,0 +1,14 @@
+{
+  "name": "bizmut",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ssh-keygen": "^0.4.1"
+  }
+}
