@@ -27,7 +27,7 @@ var GalaxyGenerator = (function () {
 
     }
 
-    function ApplyOptions(options){
+    function ApplyOptions(options) {
         if (options['starCount'] == null)
             _starCount = RNG.GetRandomIntegerFromRange(MIN_STAR_COUNT, MAX_STAR_COUNT);
         else if (options['starCount'] < MIN_STAR_COUNT)

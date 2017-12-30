@@ -65,7 +65,7 @@ var PRNG = (function () {
         nextDouble: nextDouble,
         nextDoubleRange, nextDoubleRange
     }
-    
+
 })();
 
 module.exports = PRNG;
