@@ -8,6 +8,10 @@ var OptionsValidatorFactory = (function() {
         switch(entityType) {
             case EntityType.Moon:
                 return new OptionsValidator(OptionsValidatorRepository.MoonOptionsValidators);
+            case EntityType.Planet:
+                return new OptionsValidator(OptionsValidatorRepository.PlanetOptionsValidators);
+            default:
+             return new OptionsValidator(OptionsValidatorRepository.MoonOptionsValidators);
         }
     }
 

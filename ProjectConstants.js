@@ -3,7 +3,7 @@ const ProjectConstants = {
     MAX_STAR_COUNT: 1000,
     DEFAULT_NOMAD_PLANET_COEFICIENT: 0.1,
     DEFAULT_STAR_CLUSTER_COEFICIENT: 0.3,
-    DEFAULT_MAX_MOON_COUNT_PER_PLANET: 9  
+    DEFAULT_MAX_MOON_COUNT_PER_PLANET: 23  
 }
 
 module.exports = ProjectConstants;

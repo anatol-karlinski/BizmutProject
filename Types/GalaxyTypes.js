@@ -5,6 +5,8 @@ var GalaxyTypes;
     GalaxyTypes[GalaxyTypes["Ring"] = 3] = "Ring";
 })(GalaxyTypes || (GalaxyTypes = {}));
 
+module.exports = GalaxyTypes;
+
 /*
 enum GalaxyTypes {
     Pinwheel = 1,

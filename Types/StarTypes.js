@@ -12,6 +12,7 @@ var StarTypes;
     StarTypes[StarTypes["Back_hole"] = 10] = "Back_hole";
 })(StarTypes || (StarTypes = {}));
 
+module.exports = StarTypes;
 
 /*
 enum StarTypes {

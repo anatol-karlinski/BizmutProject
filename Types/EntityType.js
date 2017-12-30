@@ -7,6 +7,8 @@ var EntityType;
     EntityType[EntityType["StarCluster"] = 5] = "StarCluster";
 })(EntityType || (EntityType = {}));
 
+module.exports = EntityType;
+
 /*
 enum EntityType {
     Moon = 1,

@@ -8,6 +8,7 @@ var PlanetTypes;
     PlanetTypes[PlanetTypes["Hydrogen"] = 6] = "Hydrogen";
 })(PlanetTypes || (PlanetTypes = {}));
 
+module.exports = PlanetTypes;
 
 /*
 enum PlanetTypes {

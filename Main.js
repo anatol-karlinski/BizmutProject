@@ -1,14 +1,12 @@
 const PRNG = require('./Helpers/PRNG')
 PRNG.setSeed(123456);
 
-const StarSystemGenerator = require('./Generators/StarSystemGenerator/StarSystemGenerator');
+const PlanetGenerator = require('./Generators/PlanetGenerator/PlanetGenerator');
+const StarSystem = require('./Models/StarSystem');
 
+var options = {
+    parentSystem: new StarSystem(),
+    maxMoonCount: 12
+};
 
-var testGalaxy = StarSystemGenerator.Generate({
-
-});
-
-var test = PRNG.nextInt();
-
-
-var x = 12;
+var testEntity = PlanetGenerator.Generate(PRNG.nextInt(), options);
