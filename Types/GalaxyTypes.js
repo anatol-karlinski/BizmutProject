@@ -5,8 +5,10 @@ var GalaxyTypes;
     GalaxyTypes[GalaxyTypes["Ring"] = 3] = "Ring";
 })(GalaxyTypes || (GalaxyTypes = {}));
 
+/*
 enum GalaxyTypes {
     Pinwheel = 1,
     Elliptical,
     Ring
 }
+*/

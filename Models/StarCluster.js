@@ -6,6 +6,5 @@ module.exports = class StarCluster extends BaseEntity{
         super('Temp star cluster');
         this.StarSystems = new Array();
         this.Stars = new Array();
-        this.Planets = new Array();
     }
 }

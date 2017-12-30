@@ -1,0 +1,3 @@
+interface MoonGenerationOptions {
+    parentPlanet: any;
+}

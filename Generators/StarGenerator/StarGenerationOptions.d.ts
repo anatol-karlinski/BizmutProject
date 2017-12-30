@@ -1,0 +1,3 @@
+interface StarGenerationOptions {
+    parentSystem: any;
+}
