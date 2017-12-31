@@ -2,8 +2,8 @@ const Galaxy = require('../../Models/Galaxy')
 const RNG = require('./../../Helpers/RNG')
 const ProjectCoeficient = require('./../../ProjectConstants')
 
-const MIN_STAR_COUNT = 200;
-const MAX_STAR_COUNT = 1000;
+const DEFAULT_MIN_STAR_COUNT = 200;
+const DEFAULT_MAX_STAR_COUNT = 1000;
 
 const DEFAULT_NOMAD_PLANET_COEFICIENT = 0.1;
 
@@ -29,11 +29,11 @@ var GalaxyGenerator = (function () {
 
     function ApplyOptions(options) {
         if (options['starCount'] == null)
-            _starCount = RNG.GetRandomIntegerFromRange(MIN_STAR_COUNT, MAX_STAR_COUNT);
-        else if (options['starCount'] < MIN_STAR_COUNT)
-            _starCount = MIN_STAR_COUNT;
-        else if (options['starCount'] > MAX_STAR_COUNT)
-            _starCount = MAX_STAR_COUNT;
+            _starCount = RNG.GetRandomIntegerFromRange(DEFAULT_MIN_STAR_COUNT, DEFAULT_MAX_STAR_COUNT);
+        else if (options['starCount'] < DEFAULT_MIN_STAR_COUNT)
+            _starCount = DEFAULT_MIN_STAR_COUNT;
+        else if (options['starCount'] > DEFAULT_MAX_STAR_COUNT)
+            _starCount = DEFAULT_MAX_STAR_COUNT;
         else
             _starCount = options['starCount'];
 

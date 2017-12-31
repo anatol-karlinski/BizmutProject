@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "seedrandom": "^2.4.3",
     "ssh-keygen": "^0.4.1"
   }
 }

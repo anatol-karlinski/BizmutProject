@@ -1,30 +1,31 @@
+const seedrandom = require('seedrandom')
+
 var RNG = (function () {
 
-    function GetRandomIntegerFromRange(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
+    var _randomseedObject;
+
+    function SetRandomGenerationSeed(seed) {
+        _randomseedObject = new Math.seedrandom(seed);
     }
 
-    function GetNthDigitOfInteger(integer, index) {
-        var intAsString = String(integer);
-        while (intAsString.length > index - 1)
-            index = - intAsString.length;
-        return intAsString.charAt(index);
+    function GetRandomIntegerFromRange(min, max) {
+        return Math.floor(_randomseedObject() * (max - min + 1)) + min;
     }
 
     function GenerateNameFromInteger(integer) {
-        /* todo: ulepszy algorytm i wywalic do oddzielnego modulu*/
         var intAsStringArray = String(integer).split('');
         var generatedName = '';
         intAsStringArray.forEach((element) => {
-            generatedName += String.fromCharCode(65 + parseInt(element));
+            var randomIntFromChar = GetRandomIntegerFromRange(65, 86);
+            generatedName += String.fromCharCode(randomIntFromChar);
         });
         return generatedName;
     }
 
     return {
         GetRandomIntegerFromRange: GetRandomIntegerFromRange,
-        GetNthDigitOfInteger: GetNthDigitOfInteger,
-        GenerateNameFromInteger: GenerateNameFromInteger
+        GenerateNameFromInteger: GenerateNameFromInteger,
+        SetRandomGenerationSeed: SetRandomGenerationSeed
     }
 
 })();

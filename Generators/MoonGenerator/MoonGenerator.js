@@ -9,8 +9,8 @@ var MoonGenerator = (function () {
     var _optionsValidator = OptionsValidatorFactory.GetValidator(EntityType.Moon);
 
     function Generate(options) {
-        var seed = PRNG.nextInt();
         _optionsValidator.Validate(options);
+        var seed = PRNG.nextInt();
         var prototype = new Moon();
         prototype.ParentPlanet = options['parentPlanet'];
         prototype.Name = RNG.GenerateNameFromInteger(seed);

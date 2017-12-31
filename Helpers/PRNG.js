@@ -9,10 +9,22 @@ var PRNG = (function () {
      */
     function setSeed(seed) {
         /* todo: algorytm zamieniający stringi na inty */
+        if (typeof seed == 'string')
+            seed = convertWordToInt(seed);
+
         if (seed <= 0 || seed >= 0X7FFFFFFE)
             throw 'Generated seed is not valid';
         else
             _seed = seed;
+    }
+
+    function convertWordToInt(word) {
+        var wordAsCharArray = word.split('');
+        var intString = 0;
+        wordAsCharArray.forEach(char => {
+            intString = parseInt(char.charCodeAt(0)) + parseInt(intString);
+        });
+        return parseInt(intString);
     }
 
     /**

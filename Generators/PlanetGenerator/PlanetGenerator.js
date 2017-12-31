@@ -4,7 +4,6 @@ const MoonGenerator = require('./../MoonGenerator/MoonGenerator')
 const ProjectCoeficient = require('./../../ProjectConstants')
 const RNG = require('./../../Helpers/RNG')
 const PRNG = require('./../../Helpers/PRNG')
-
 const OptionsValidatorFactory = require('../../Validators/OptionsValidator/OptionsValidatorFactory')
 const EntityType = require('./../../Types/EntityType')
 
@@ -13,10 +12,10 @@ var PlanetGenerator = (function () {
     var _optionsValidator = OptionsValidatorFactory.GetValidator(EntityType.Planet);
 
     function Generate(options) {
-        var seed = PRNG.nextInt();
         _optionsValidator.Validate(options);
+        var seed = PRNG.nextInt();
         var prototype = new Planet();
-        var moonCount = seed % options['maxMoonCount'];
+        var moonCount = RNG.GetRandomIntegerFromRange(options['minMoonCount'], options['maxMoonCount']);
         prototype.Name = RNG.GenerateNameFromInteger(seed);
         prototype.System = options['parentSystem'];
         prototype.Moons = CreateMoons(moonCount, prototype);

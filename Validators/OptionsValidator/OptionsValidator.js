@@ -1,20 +1,21 @@
 function OptionsValidator(validatorsArray) {
+    
     var _validatorsArray = validatorsArray;
 
     var my = {};
 
-    my.Validate = function (options) {
-        if (options === undefined) {
-            throw 'Passed options object was not defined.'
+    my.Validate = function (optionsObject) {
+        if (optionsObject === undefined) {
+            throw 'Passed optionsObject object was not defined.'
             return false;
         }
         for (var optionName in _validatorsArray) {
-            if (options[optionName] === undefined) {
+            if (optionsObject[optionName] === undefined) {
                 throw 'Option [' + optionName + '] was not defined.'
                 return false;
             }
             var validationMethod = _validatorsArray[optionName];
-            if (!validationMethod(options[optionName])) {
+            if (!validationMethod(optionsObject)) {
                 throw 'Option [' + optionName + '] failed validation'
                 return false;
             }
