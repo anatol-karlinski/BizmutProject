@@ -1,4 +1,6 @@
 interface StarSystemGenerationOptions {
     maxPlanetCount: number;
-    minPlanetCount: number
+    minPlanetCount: number;
+    multipleStarsChance: number;
+    maxStarCount: number;
 }

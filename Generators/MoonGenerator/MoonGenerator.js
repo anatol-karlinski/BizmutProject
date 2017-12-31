@@ -1,6 +1,5 @@
 const Moon = require('./../../Models/Moon')
 const RNG = require('./../../Helpers/RNG')
-const PRNG = require('./../../Helpers/PRNG')
 const OptionsValidatorFactory = require('../../Validators/OptionsValidator/OptionsValidatorFactory')
 const EntityType = require('./../../Types/EntityType')
 
@@ -10,11 +9,10 @@ var MoonGenerator = (function () {
 
     function Generate(options) {
         _optionsValidator.Validate(options);
-        var seed = PRNG.nextInt();
-        var prototype = new Moon();
-        prototype.ParentPlanet = options['parentPlanet'];
-        prototype.Name = RNG.GenerateNameFromInteger(seed);
-        return prototype;
+        var prototypeMoon = new Moon();
+        prototypeMoon.ParentPlanet = options['parentPlanet'];
+        prototypeMoon.Name = RNG.GenerateRandomName();
+        return prototypeMoon;
     }
 
     return {

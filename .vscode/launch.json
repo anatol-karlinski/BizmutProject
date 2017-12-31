@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "stopOnEntry": true,
+            "stopOnEntry": false,
             "name": "Launch Program",
             "program": "${workspaceFolder}/Main.js"
         }
