@@ -14,6 +14,8 @@ var OptionsValidatorFactory = (function () {
                 return new OptionsValidator(OptionsValidatorRepository.StarOptionsValidators);
             case EntityType.StarSystem:
                 return new OptionsValidator(OptionsValidatorRepository.StarSystemValidators);
+            case EntityType.Galaxy:
+                return new OptionsValidator(OptionsValidatorRepository.GalaxyValidators);
             default:
                 return new OptionsValidator(OptionsValidatorRepository.MoonOptionsValidators);
         }

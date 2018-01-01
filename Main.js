@@ -1,18 +1,26 @@
-const PRNG = require('./Helpers/PRNG')
 const RNG = require('./Helpers/RNG')
 const PlanetGenerator = require('./Generators/PlanetGenerator/PlanetGenerator');
 const StarSystemGenerator = require('./Generators/StarSystemGenerator/StarSystemGenerator');
+const GalaxyGenerator = require('./Generators/GalaxyGenerator/GalaxyGenerator');
 const StarSystem = require('./Models/StarSystem');
+const SeedManager = require('./Helpers/SeedManager')
+const GalaxyTypes = require('./Types/GalaxyTypes')
+const GalaxySizeTypes = require('./Types/GalaxySizeType')
 
-PRNG.setSeed('e774dfc6-401f-455a-93bc-8a21dcc1e2c0');
-RNG.SetRandomGenerationSeed(PRNG.nextInt());
+var testSeed = SeedManager.GetSeedFromGalaxyGenerationSettings({
+    type: GalaxyTypes.Pinwheel,
+    size: GalaxySizeTypes.Medium
+})
+
+var testOptionsFromSeed = SeedManager.GetGalaxyGenerationSettingsFromSeed(testSeed);
+
+RNG.SetRandomGenerationSeed(testSeed);
 
 var options = {
-    maxPlanetCount: 10,
-    minPlanetCount: 2,
-    multipleStarsChance: 0.001,
-    maxStarCount: 2
+    maxStarCount: 2000,
+    minStarCount: 1000,
+    nomadPlanetCoeficient: 0.0005
 };
 
-var testEntity = StarSystemGenerator.Generate(options);
+var testEntity = GalaxyGenerator.GenerateFromPureSeed(options);
 console.log(testEntity);

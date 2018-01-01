@@ -2,14 +2,13 @@ const seedrandom = require('seedrandom')
 
 var RNG = (function () {
 
-    var _seedrandomObject;
 
     function SetRandomGenerationSeed(seed) {
-        _seedrandomObject = new Math.seedrandom(seed);
+        seedrandom(seed, { global: true });
     }
 
     function GetRandomIntegerFromRange(min, max) {
-        return Math.floor(_seedrandomObject() * (max - min + 1)) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     function GenerateRandomName() {
@@ -20,7 +19,6 @@ var RNG = (function () {
         }
         return generatedName;
     };
-
 
     return {
         GetRandomIntegerFromRange: GetRandomIntegerFromRange,

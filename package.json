@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "seedrandom": "^2.4.3",
-    "ssh-keygen": "^0.4.1"
+    "sprintf": "^0.1.5",
+    "ssh-keygen": "^0.4.1",
+    "underscore": "^1.8.3"
   }
 }

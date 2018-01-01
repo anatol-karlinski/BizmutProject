@@ -1,5 +1,5 @@
 interface GalaxyGenerationOptions {
-    starCount: number;
+    maxStarCount: number;
+    minStarCount: number;
     nomadPlanetCoeficient: number;
-    maxMoonCountPerPlanet: number;
 }
