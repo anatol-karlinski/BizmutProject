@@ -1,5 +1,5 @@
 function OptionsValidator(validatorsArray) {
-    
+
     var _validatorsArray = validatorsArray;
 
     var my = {};

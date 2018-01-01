@@ -10,7 +10,7 @@ const GalaxySizeTypes = require('./Types/GalaxySizeType')
 var testSeed = SeedManager.GetSeedFromGalaxyGenerationSettings({
     type: GalaxyTypes.Pinwheel,
     size: GalaxySizeTypes.Medium
-})
+});
 
 var testOptionsFromSeed = SeedManager.GetGalaxyGenerationSettingsFromSeed(testSeed);
 

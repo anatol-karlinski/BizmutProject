@@ -33,7 +33,7 @@ var StarSystemGenerator = (function () {
 
     function GenerateStars(multipleStarsChance, maxStarCount, parentSystem) {
         var starsArray = new Array();
-        var multipleStars = (Math.random() < multipleStarsChance*0.001);
+        var multipleStars = (Math.random() < multipleStarsChance * 0.001);
         var starCount = 0;
         if (multipleStars)
             starCount = RNG.GetRandomIntegerFromRange(1, maxStarCount);

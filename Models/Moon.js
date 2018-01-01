@@ -1,7 +1,7 @@
 const BaseEntity = require('./BaseEntity');
 
-module.exports = class Moon extends BaseEntity{
-    constructor(){
+module.exports = class Moon extends BaseEntity {
+    constructor() {
         super('Temp moon');
         this.ParentPlanet = null;
     }

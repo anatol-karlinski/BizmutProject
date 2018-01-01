@@ -11,48 +11,14 @@ var GalaxyGenerator = (function () {
 
     var _optionsValidator = OptionsValidatorFactory.GetValidator(EntityType.Galaxy);
 
-    function Generate(seed) {
-        var seedIsPreGenerated = seed.match('^[0-9A-Z]{3}-');
-        if (seedIsPreGenerated)
-            GenerateFroPreGeneratedSeed(seed);
-        else
-            GenerateFromPureSeed(options);
-    }
-
-    function GenerateFroPreGeneratedSeed(seed) {
-
-    }
-
-    function DecodeOptionsFromSeed(seed) {
-        var galaxySize = (function (subSeed) {
-            var subseedTrueValue = HexToDec(subSeed);
-            if (subseedTrueValue < 800)
-                return GalaxySizeType.Tiny;
-            else if (subseedTrueValue < 1600)
-                return GalaxySizeType.Small;
-            else if (subseedTrueValue < 2400)
-                return GalaxySizeType.Medium;
-            else if (subseedTrueValue < 3200)
-                return GalaxySizeType.Large;
-            else
-                return GalaxySizeType.Huge;
-        })(seed.substr(0, 3));
-
-    }
-
-    function HexToDec(hexValue) {
-        return parseInt(hexValue.toString(16));
-    }
-
-    function GenerateFromPureSeed(options) {
+    function Generate(options) {
+        _optionsValidator.Validate(options);
         var galaxyPrototype = new Galaxy();
         var starCount = RNG.GetRandomIntegerFromRange(options['minStarCount'], options['maxStarCount']);
         var nomadPlanetsCount = starCount * options['nomadPlanetCoeficient'];
-
         galaxyPrototype.StarSystems = GenerateStarSystems(starCount);
         galaxyPrototype.NomadPlanets = GenerateNomadPlanets(nomadPlanetsCount);
         galaxyPrototype.Name = RNG.GenerateRandomName();
-
         return galaxyPrototype;
     }
 
@@ -81,13 +47,8 @@ var GalaxyGenerator = (function () {
         return nomadPlanetsArray;
     }
 
-    function GenerateFromPremadeSeed() {
-
-    }
-
     return {
         Generate: Generate,
-        GenerateFromPureSeed: GenerateFromPureSeed
     }
 
 })();
