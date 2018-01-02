@@ -4,7 +4,7 @@ const StarCluster = require('./StarCluster')
 
 module.exports = class Galaxy extends BaseEntity {
     constructor() {
-        super('Temp galaxy');
+        super('TEMP GALAXY');
         this.Type = null;
         this.NomadPlanets = new Array();
         this.StarSystems = new Array();

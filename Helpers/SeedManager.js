@@ -21,6 +21,18 @@ var SeedManager = (function () {
         }
     }
 
+    function SeedWasPreGenerated(seed) {
+        var encodedSettings = seed.match(/[0-9A-Za-z]+/g);
+        var settingsAreValid = true;
+        if (encodedSettings.length <= 1)
+            return false;
+        encodedSettings.forEach(setting => {
+            if (parseInt(setting, 16) < 0)
+                return false;
+        });
+        return true;
+    }
+
     function GetTypeFromSubseed(subseed) {
         return Math.floor((parseInt(subseed, 16) / 1000) + 1);
     }
@@ -31,7 +43,8 @@ var SeedManager = (function () {
 
     return {
         GetSeedFromGalaxyGenerationSettings: GetSeedFromGalaxyGenerationSettings,
-        GetGalaxyGenerationSettingsFromSeed: GetGalaxyGenerationSettingsFromSeed
+        GetGalaxyGenerationSettingsFromSeed: GetGalaxyGenerationSettingsFromSeed,
+        SeedWasPreGenerated: SeedWasPreGenerated
     }
 
 })();
