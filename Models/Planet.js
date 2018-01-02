@@ -7,5 +7,8 @@ module.exports = class Planet extends BaseEntity {
         this.Moons = new Array();
         this.System = null;
         this.Type = null;
+
+        this.Radius = null;
+        this.DistanceFromSystemsCenter = null;
     }
 }

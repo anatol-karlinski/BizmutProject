@@ -7,5 +7,7 @@ module.exports = class StarSystem extends BaseEntity {
         this.Type = null;
         this.Planets = new Array();
         this.Stars = new Array();
+
+        this.Radius = null;
     }
 }

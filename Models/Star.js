@@ -5,5 +5,7 @@ module.exports = class Star extends BaseEntity {
         super('TEMP STAR');
         this.Type = null;
         this.System = null;
+
+        this.Radius = null;
     }
 }
