@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "random-js": "^1.0.8",
     "seedrandom": "^2.4.3",
     "sprintf": "^0.1.5",
     "ssh-keygen": "^0.4.1",

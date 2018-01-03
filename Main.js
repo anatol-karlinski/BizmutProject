@@ -54,7 +54,6 @@ function CreateGalaxyFromSeed(seed) {
         nomadPlanetCoeficient: ProjectConstants.DEFAULT_NOMAD_PLANET_COEFICIENT
     });
     return seed;
-
 }
 
 var seed = CreateGalaxyFromSettings({
@@ -63,3 +62,23 @@ var seed = CreateGalaxyFromSettings({
 });
 
 CreateGalaxyFromSeed(seed);
+
+RNG.GetRandomObjectFromArray([
+    {
+        object: '1',
+        weight: 0.5
+    },
+    {
+        object: '2',
+        weight: 0.2
+    },
+    {
+        object: '3',
+        weight: 0.25
+    },
+    {
+        object: '4',
+        weight: 0.05
+    },
+]);
+
